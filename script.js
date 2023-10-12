@@ -2,6 +2,7 @@ const psb = document.getElementById("previousSlide")
 const nsb = document.getElementById("nextSlide") 
 const chv = document.querySelector(".presentation .chapter:first-child") 
 const pos = document.querySelector(".titles .position")
+const gradText = document.getElementById('gradientText')
 var cs = 0;
 
 nsb.addEventListener("click", (e) => {
@@ -15,3 +16,42 @@ psb.addEventListener("click", (e) => {
   pos.innerHTML = cs + 1;
   chv.style.transform = "translateX("+ (-100 * cs) + "vw)";
 })
+
+nsb.addEventListener('mouseenter', (e) => {
+  nsb.classList.add('enlarged');
+});
+
+nsb.addEventListener('mouseleave', (e) => {
+  nsb.classList.remove('enlarged');;
+});
+
+psb.addEventListener('mouseenter', (e) => {
+  psb.classList.add('enlarged');
+});
+
+psb.addEventListener('mouseleave', (e) => {
+  psb.classList.remove('enlarged');;
+});
+
+gradText.addEventListener('mouseenter', (e) => {
+  gradText.classList.add('gradient');
+});
+
+gradText.addEventListener('mouseleave', (e) => {
+  gradText.classList.remove('gradient');;
+});
+
+
+gradText.addEventListener('mouseover', function () {
+    // Gradually blur the text on mouseover
+    gradText.style.transition = 'color 0.5s, filter 1s';
+    gradText.style.color = 'transparent'; // Make text transparent
+    gradText.style.filter = 'blur(5px)'; // Apply blur effect
+});
+
+gradText.addEventListener('mouseout', function () {
+    // Restore the text to its original state on mouseout
+    gradText.style.transition = 'color 0.5s, filter 1s';
+    gradText.style.color = 'initial'; // Restore text color
+    gradText.style.filter = 'blur(0)'; // Remove blur effect
+});
