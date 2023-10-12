@@ -1,0 +1,79 @@
+body{
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-family: Inter;
+}
+
+
+#nextChapter{
+  display: none;
+}
+
+#previousChapter{
+  display: none;
+}
+
+#restart{
+  display: none;
+}
+
+.icon{
+  height: 24px;
+  width: 24px;
+  font-size: 0;
+  background: none;
+  border: none;
+}
+
+.icon.previous{
+  background-image: url("/previous-arrow.svg")
+}
+
+.icon.next{
+  background-image: url("/next-arrow.svg")
+}
+
+.titles span {
+  display: none;
+}
+
+.titles span:first-child {
+  display: inline;
+}
+
+.tools {
+  position: fixed;
+  width: 100vw;
+  padding: 0 5vw;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  z-index: 10;
+}
+
+.chapter {
+  display:flex;
+  transition: transform 2000ms ease-in-out;
+}
+
+.chapter section {
+  height: 100vh;
+  width: 95vw;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 5vw;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+
+/* Element | https://butternut-chief-glove.glitch.me/ */
+
+#presentation {
+  transform: translateX(-100);
+}
+
+
+
