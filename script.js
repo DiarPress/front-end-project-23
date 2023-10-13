@@ -43,15 +43,13 @@ gradText.addEventListener('mouseleave', (e) => {
 
 
 gradText.addEventListener('mouseover', function () {
-    // Gradually blur the text on mouseover
     gradText.style.transition = 'color 0.5s, filter 1s';
-    gradText.style.color = 'transparent'; // Make text transparent
-    gradText.style.filter = 'blur(5px)'; // Apply blur effect
+    gradText.style.color = 'transparent';
+    gradText.style.filter = 'blur(5px)'; 
 });
 
 gradText.addEventListener('mouseout', function () {
-    // Restore the text to its original state on mouseout
     gradText.style.transition = 'color 0.5s, filter 1s';
-    gradText.style.color = 'initial'; // Restore text color
-    gradText.style.filter = 'blur(0)'; // Remove blur effect
+    gradText.style.color = 'initial'; 
+    gradText.style.filter = 'blur(0)'; 
 });
